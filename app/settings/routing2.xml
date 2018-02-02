@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <system>
+        <route match="index" controller="Index" action="index" />
+        <route match="forbidden" controller="error" action="403" />
+        <route match="not_found" controller="error" action="page404" />
+    </system>
+    <routes>
+        <route match="user" controller="User" action="list">
+
+            <route controller="User" action="user" match="id{user_id|num}">
+                <route match="comments" controller="User" action="comments" />
+                <route match="wall" controller="User" action="wall" />
+            </route>
+
+            <route controller="User" action="user" match="{login}">
+                <route match="comments" controller="User" action="comments" />
+                <route match="wall" controller="User" action="wall" />
+            </route>
+
+        </route>
+
+        <route match="catalog" controller="Catalog" action="sectionsList">
+            <route match="{sectionId|num}" controller="Catalog" action="section">
+
+                <route match="filter-{filterValue}" controller="Catalog" action="filter">
+                </route>
+
+                <route match="{elementId|num}" controller="Catalog" action="element">
+                </route>
+
+                <route match="{elementCode}" controller="Catalog" action="element">
+                </route>
+            </route>
+
+            <route match="{sectionCode}" controller="Catalog" action="section">
+
+                <route match="filter-{filterValue}" controller="Catalog" action="filter">
+                </route>
+
+                <route match="{elementId|num}" controller="Catalog" action="element">
+                </route>
+
+                <route match="{elementCode}" controller="Catalog" action="element">
+                </route>
+            </route>
+        </route>
+    </routes>
+</root>
