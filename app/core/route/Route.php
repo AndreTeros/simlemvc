@@ -17,7 +17,7 @@ class Route {
             }
         } else {
             // todo: correct exception
-            throw new \Exception("Controller Class not found");
+            throw new \Exception("Controller Class '$controllerClass' not found");
         }
 
     }

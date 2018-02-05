@@ -2,8 +2,8 @@
 <root>
     <system>
         <route match="index" controller="Index" action="index" />
-        <route match="forbidden" controller="error" action="403" />
-        <route match="not_found" controller="error" action="page404" />
+        <route match="forbidden" controller="Error" action="403" />
+        <route match="not_found" controller="Error" action="page404" />
     </system>
     <routes>
         <route match="user" controller="User" action="list">

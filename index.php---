@@ -2,6 +2,4 @@
 
 echo "ky";
 
-// todo: проверить загрузку js, css, img ect
 // todo: add check request method in routing
-// todo: добавить шаблоны
